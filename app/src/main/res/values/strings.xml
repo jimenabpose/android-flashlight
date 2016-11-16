@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Flashlight</string>
+    <string name="permdesc_flashlight">Permission to use the flashlight</string>
+</resources>
