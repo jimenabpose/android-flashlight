@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="ligth_on"
+        android:summaryOn="Light on"
+        android:summaryOff="Light off"
+        android:title="Light on"/>
+</PreferenceScreen>
