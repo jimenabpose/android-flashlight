@@ -9,4 +9,9 @@
     <string name="pref_ligth_on_summary_on">Light is on</string>
     <string name="pref_ligth_on_summary_off">Light is off</string>
     <string name="pref_light_on_key" translatable="false">light_on</string>
+
+    <string name="pref_screen_color_key" translatable="false">screen_color</string>
+    <string name="pref_screen_color_title">Screen color</string>
+    <string name="pref_screen_color_summary">Pick a screen color</string>
+    <string name="pref_screen_color_dialog_title">Pick a screen color</string>
 </resources>

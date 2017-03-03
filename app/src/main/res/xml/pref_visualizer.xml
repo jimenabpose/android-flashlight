@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <CheckBoxPreference
         android:defaultValue="@bool/pref_light_on_default"
         android:key="@string/pref_light_on_key"
         android:summaryOn="@string/pref_ligth_on_summary_on"
         android:summaryOff="@string/pref_ligth_on_summary_off"
         android:title="@string/pref_light_on_title"/>
+
+    <ListPreference
+        android:key="@string/pref_screen_color_key"
+        android:title="@string/pref_screen_color_title"
+        android:summary="@string/pref_screen_color_summary"
+        android:entries="@array/entries_screen_color_entries"
+        android:entryValues="@array/entries_screen_color_values"
+        android:dialogTitle="@string/pref_screen_color_dialog_title" />
+
 </PreferenceScreen>
