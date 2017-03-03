@@ -12,7 +12,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.preference.PreferenceManager;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -53,6 +52,7 @@ public class FlashlightActivity extends AppCompatActivity implements SharedPrefe
     private void setupSharedPreferences() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         setFlashlighOn(preferences.getBoolean(getString(R.string.pref_light_on_key), getResources().getBoolean(R.bool.pref_light_on_default)));
+        setScreenColor(Color.parseColor(preferences.getString(getString(R.string.pref_screen_color_key), String.valueOf(R.color.white))));
         preferences.registerOnSharedPreferenceChangeListener(this);
     }
 
