@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <CheckBoxPreference
-        android:defaultValue="true"
-        android:key="ligth_on"
-        android:summaryOn="Light on"
-        android:summaryOff="Light off"
-        android:title="Light on"/>
+        android:defaultValue="@bool/pref_light_on_default"
+        android:key="@string/pref_light_on_key"
+        android:summaryOn="@string/pref_ligth_on_summary_on"
+        android:summaryOff="@string/pref_ligth_on_summary_off"
+        android:title="@string/pref_light_on_title"/>
 </PreferenceScreen>

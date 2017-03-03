@@ -2,4 +2,11 @@
     <string name="app_name">Flashlight</string>
     <string name="permdesc_flashlight">Permission to use the flashlight</string>
     <string name="action_settings">Settings</string>
+
+
+    <!--Used by preferences-->
+    <string name="pref_light_on_title">Light on</string>
+    <string name="pref_ligth_on_summary_on">Light is on</string>
+    <string name="pref_ligth_on_summary_off">Light is off</string>
+    <string name="pref_light_on_key" translatable="false">light_on</string>
 </resources>

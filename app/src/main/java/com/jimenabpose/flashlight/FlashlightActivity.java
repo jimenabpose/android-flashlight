@@ -2,6 +2,7 @@ package com.jimenabpose.flashlight;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
@@ -9,6 +10,7 @@ import android.hardware.camera2.CameraManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -24,7 +26,17 @@ public class FlashlightActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flashlight);
-        this.flashLightOn();
+        setupFromPreferences();
+
+    }
+
+    private void setupFromPreferences() {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        if (preferences.getBoolean(getString(R.string.pref_light_on_key), getResources().getBoolean(R.bool.pref_light_on_default))) {
+            this.flashLightOn();
+        } else {
+            this.flashLightOff();
+        }
     }
 
     private void flashLightOn() {
