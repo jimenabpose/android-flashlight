@@ -10,6 +10,7 @@ import android.hardware.Camera.Parameters;
 import android.hardware.camera2.CameraManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.preference.PreferenceManager;
 import android.view.Menu;
@@ -52,7 +53,7 @@ public class FlashlightActivity extends AppCompatActivity implements SharedPrefe
     private void setupSharedPreferences() {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         setFlashlighOn(preferences.getBoolean(getString(R.string.pref_light_on_key), getResources().getBoolean(R.bool.pref_light_on_default)));
-        setScreenColor(Color.parseColor(preferences.getString(getString(R.string.pref_screen_color_key), String.valueOf(R.color.white))));
+        setScreenColorFromSharedPreferences(preferences);
         preferences.registerOnSharedPreferenceChangeListener(this);
     }
 
@@ -108,8 +109,8 @@ public class FlashlightActivity extends AppCompatActivity implements SharedPrefe
         super.onBackPressed();
     }
 
-    private void setScreenColor(int color) {
-        mScreenLayout.setBackgroundColor(color);
+    private void setScreenColorFromSharedPreferences(SharedPreferences sharedPreferences) {
+        mScreenLayout.setBackgroundColor(Color.parseColor(sharedPreferences.getString(getString(R.string.pref_screen_color_key), getString(R.string.pref_screen_color_label_white))));
     }
 
     @Override
@@ -136,12 +137,13 @@ public class FlashlightActivity extends AppCompatActivity implements SharedPrefe
         return super.onOptionsItemSelected(item);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if (key.equals(getString(R.string.pref_light_on_key))) {
             setFlashlighOn(sharedPreferences.getBoolean(key, getResources().getBoolean(R.bool.pref_light_on_default)));
         } else if (key.equals(getString(R.string.pref_screen_color_key))) {
-            setScreenColor(Color.parseColor(sharedPreferences.getString(key, String.valueOf(R.color.white))));
+            setScreenColorFromSharedPreferences(sharedPreferences);
         }
     }
 }

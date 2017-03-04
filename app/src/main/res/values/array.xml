@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="entries_screen_color_entries">
-        <item>White</item>
-        <item>Black</item>
-    </string-array>
-    <string-array name="entries_screen_color_values">
-        <item>#FFFFFF</item>
-        <item>#000000</item>
-    </string-array>
+    <array name="entries_screen_color_entries">
+        <item>@string/pref_screen_color_label_white</item>
+        <item>@string/pref_screen_color_label_black</item>
+    </array>
+    <array name="entries_screen_color_values">
+        <item>@string/pref_screen_color_value_white</item>
+        <item>@string/pref_screen_color_value_black</item>
+    </array>
 </resources>

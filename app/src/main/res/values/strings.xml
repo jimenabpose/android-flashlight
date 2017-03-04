@@ -14,4 +14,9 @@
     <string name="pref_screen_color_title">Screen color</string>
     <string name="pref_screen_color_summary">Pick a screen color</string>
     <string name="pref_screen_color_dialog_title">Pick a screen color</string>
+
+    <string name="pref_screen_color_label_white">White</string>
+    <string name="pref_screen_color_label_black">Black</string>
+    <string name="pref_screen_color_value_black" translatable="false">black</string>
+    <string name="pref_screen_color_value_white" translatable="false">white</string>
 </resources>
